@@ -19,6 +19,11 @@
         .accordion-button:not(.collapsed)::after {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
+
+        a {
+            color: mediumpurple;
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -29,9 +34,20 @@
                 <div class="mt-5">
                     <h1 class="fw-bold text-center"><span class="text-danger">ПРОЕКТ</span>ирование "От и До"</h1>
                     <h5 class="fst-italic text-center text-primary text-decoration-underline">10 класс</h5>
+                    <h6 class="text-center text-info text-decoration-underline mt-3">Навигация:</h6>
+                    <nav style="--bs-breadcrumb-divider: '=>';">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#item_1">План работы</a></li>
+                            <li class="breadcrumb-item"><a href="#item_2">Лекция 1. Что такое проект?</a></li>
+                            <li class="breadcrumb-item"><a href="#item_3">Лекция 2. Какие бывают проекты?</a></li>
+                            <li class="breadcrumb-item"><a href="#item_4">Лекция 3. С чего начать проект?</a></li>
+                            <li class="breadcrumb-item"><a href="#item_5">Лекция 4. С Как доказать актуальность?</a>
+                            </li>
+                        </ol>
+                    </nav>
                 </div>
                 <div class="mt-5">
-                    <h3 class="fw-bold text-center text-success text-decoration-underline">План работы</h3>
+                    <h3 class="fw-bold text-center text-success text-decoration-underline" id="item_1">План работы</h3>
                     <div class="accordion mt-3" id="accordion">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -93,7 +109,8 @@
                 </div>
                 <div class="mt-5">
                     <h3 class="fw-bold text-center text-success text-decoration-underline">Конспект</h3>
-                    <h5 class="fw-bold fst-italic text-center text-info mt-4">Лекция 1. Что такое проект?</h5>
+                    <h5 class="fw-bold fst-italic text-center text-info mt-4" id="item_2">Лекция 1. Что такое проект?
+                    </h5>
                     <p class="fw-bold text-danger text-decoration-underline mt-3">Признаки проекта:</p>
                     <ol>
                         <li>Новизна и уникальность</li>
@@ -121,7 +138,8 @@
                             индивидуальному заказу.
                         </div>
                     </div>
-                    <h5 class="fw-bold fst-italic text-center text-info mt-4">Лекция 2. Какие бывают проекты?</h5>
+                    <h5 class="fw-bold fst-italic text-center text-info mt-4" id="item_3">Лекция 2. Какие бывают
+                        проекты?</h5>
                     <p class="fw-bold text-danger text-decoration-underline mt-3">Виды проекта:</p>
                     <ol>
                         <li>
@@ -194,7 +212,8 @@
                             </ul>
                         </li>
                     </ol>
-                    <h5 class="fw-bold fst-italic text-center text-info mt-4">Лекция 3. С чего начать проект?</h5>
+                    <h5 class="fw-bold fst-italic text-center text-info mt-4" id="item_4">Лекция 3. С чего начать
+                        проект?</h5>
                     <ol>
                         <li>
                             Выбор интересной, близкой, привлекающей сферы (направления):
@@ -206,7 +225,8 @@
                                 <li>Местное сообщество</li>
                             </ul>
                         </li>
-                        <li>Поиск проблемы для решения</li>
+                        <li>Составить банк проблем</li>
+                        <li>Выбрать одну проблему по критериям для решения</li>
                     </ol>
                     <p>
                         <span class="text-danger">Проект</span> - это деятельность, направленная на решение актуальной
@@ -281,6 +301,94 @@
                                 интернете.</span>
                         </div>
                     </div>
+                    <h5 class="fw-bold fst-italic text-center text-info mt-4" id="item_5">Лекция 4. С Как доказать
+                        актуальность?
+                    </h5>
+                    <p>
+                        <span class="text-danger">Актуальность</span> - степень её злободневности и необходимость её
+                        решения.
+                    </p>
+                    <p>
+                        <span class="text-danger">Актуальность</span> = важность для целевой аудитории.
+                    </p>
+                    <p class="fw-bold text-success text-decoration-underline mt-3">Актуальный =</p>
+                    <ul>
+                        <li>Злободневный</li>
+                        <li>Наболевший</li>
+                        <li>Современный</li>
+                        <li>Важный</li>
+                        <li>Животрепещущий</li>
+                        <li>Стояший на повестке дня</li>
+                    </ul>
+                    <p class="fw-bold fst-italic text-warning mt-3">Как доказать актуальность?</p>
+                    <ol>
+                        <li>Результаты ранее выполненных исследований, статистика</li>
+                        <li>Официальные документы, материалы СМИ, мнение экспертов</li>
+                        <li>Сравнение существующего и планируемого с акцентом на новизну</li>
+                        <li>Результаты собственного наблюдения, эксперимента, опроса и прочего</li>
+                    </ol>
+                    <p class="fw-bold fst-italic text-primary mt-3">Сравнение существующего и планируемого:</p>
+                    <ol>
+                        <li>Настояшее (проверенные факты, источники)</li>
+                        <li>Проблемное будущее (если бездействовать)</li>
+                        <li>Желаемое будущее (результат вашего проекта)</li>
+                    </ol>
+                    <p class="fw-bold text-danger text-decoration-underline mt-3">Способы доказательства актуальности:
+                    </p>
+                    <ol>
+                        <li>
+                            <span class="text-primary">Наблюдение:</span>
+                            <ul>
+                                <li><span class="text-success">Организованное</span> - план наблюдения, место, время,
+                                    список вопросов</li>
+                                <li><span class="text-success">Целенаправленное</span> - объект, для чего?</li>
+                                <li><span class="text-success">Фиксированное</span> - средства фиксации</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="text-primary">Опрос/Беседа/Интервью</span>
+                            <ul>
+                                <li><span class="text-success">Интервьюер</span> - заранее готовт и задаёт вопросы</li>
+                                <li><span class="text-success">Респондент</span> - отвечает на вопросы</li>
+                                <li>
+                                    <span class="text-success">Целенаправленный процесс</span>:
+                                    <ul>
+                                        <li>Что знают люди о проблеме?</li>
+                                        <li>Кого волнует проблема и в какой степени?</li>
+                                        <li>Хотели бы они решить её и как?</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="text-primary">Эксперимент</span>
+                            <ul>
+                                <li><span class="text-success">Организованное</span> - план наблюдения, место, время,
+                                    список вопросов</li>
+                                <li><span class="text-success">Целенаправленное</span> - объект, для чего?</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="text-primary">Исследование</span>
+                            <ul>
+                                <li><span class="text-success">Организованное</span> - план наблюдения, место, время,
+                                    список вопросов</li>
+                                <li><span class="text-success">Целенаправленное</span> - объект, для чего?</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p class="fw-bold text-success text-decoration-underline mt-3">Актуальность исследования:</p>
+                    <ul>
+                        <li>Восполнение пробелов в науке</li>
+                        <li>Дальнейшее развитие проблемы в современных условиях</li>
+                        <li>Своя точка зрения в вопросе</li>
+                        <li>Обобщение накопленного опыта</li>
+                        <li>Продвижение знаний по основному вопросу</li>
+                        <li>Постановка новых проблем с целью привлечения внимания общественности</li>
+                    </ul>
+                    <p>
+                        <span class="text-danger">Актуальность</span> = <span class="text-danger">Новизна</span>
+                    </p>
                 </div>
             </div>
         </div>
