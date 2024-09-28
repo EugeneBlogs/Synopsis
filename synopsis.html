@@ -27,14 +27,14 @@
         }
 
         .btn-up {
+            display: flex;
             position: fixed;
-            background-color: mediumpurple;
-            right: 20px;
             bottom: 0;
+            right: 20px;
+            background-color: mediumpurple;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             cursor: pointer;
-            display: flex;
             align-items: center;
             justify-content: center;
             width: 60px;
@@ -51,13 +51,11 @@
         }
 
         .btn-up_show {
-            display: flex;
             animation: showAnimation 0.5s linear forwards;
         }
 
         .btn-up_hide {
-            animation: showAnimation 0.5s linear forwards;
-            display: none;
+            animation: hideAnimation 0.5s linear forwards;
         }
 
         .btn-up:hover {
@@ -71,6 +69,16 @@
 
             100% {
                 opacity: 1;
+            }
+        }
+
+        @keyframes hideAnimation {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
             }
         }
     </style>
