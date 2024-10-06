@@ -12,6 +12,15 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
+        .progress-bar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 4px;
+            width: 0%;
+            background: mediumpurple;
+        }
+
         .accordion-button:not(.collapsed) {
             color: gray;
             background-color: #ffc503;
@@ -81,10 +90,25 @@
                 opacity: 0;
             }
         }
+
+        .countdown-number {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 3px;
+            background: #00bf96;
+        }
+
+        .countdown-time {
+            display: inline-block;
+            padding: 15px;
+            border-radius: 5px;
+            background: #00816a;
+        }
     </style>
 </head>
 
 <body class="pt-5 pb-5">
+    <div class="progress-bar" id="progressBar"></div>
     <div class="btn-up btn-up_hide"></div>
     <div class="container">
         <div class="row">
@@ -163,6 +187,30 @@
                             </h2>
                             <div id="item6" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                 <div class="accordion-body">Защита = <b><u>ЗАЧЁТ</u></b>.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="loading">
+                        <h5 class="fw-bold fst-italic text-center text-info mt-4" id="item_2">До предзащиты проекта:
+                        </h5>
+                        <div class="text-center text-light">
+                            <div id="countdown">
+                                <div class="countdown-number">
+                                    <h5 class="days countdown-time"></h5>
+                                    <p class="countdown-text">Дней</p>
+                                </div>
+                                <div class="countdown-number">
+                                    <h5 class="hours countdown-time"></h5>
+                                    <p class="countdown-text">Часов</p>
+                                </div>
+                                <div class="countdown-number">
+                                    <h5 class="minutes countdown-time"></h5>
+                                    <p class="countdown-text">Минут</p>
+                                </div>
+                                <div class="countdown-number">
+                                    <h5 class="seconds countdown-time"></h5>
+                                    <p class="countdown-text">Секунд</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -639,10 +687,10 @@
                                         <tr>
                                             <td class="fw-bold text-success">S</td>
                                             <td>Specific</td>
-                                            <td class="fw-bold text-danger">Д</td>
-                                            <td>Достижима</td>
-                                            <td>Возможно ли достигнуть цель, есть ли все ресурсы для достижения цели или
-                                                их довольно легко можно получить.</td>
+                                            <td class="fw-bold text-danger">К</td>
+                                            <td>Конкретна</td>
+                                            <td>Указано, что именно нужно сделать, где, с кем, с помощью чего и т.д.
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="fw-bold text-success">M</td>
@@ -655,18 +703,18 @@
                                         <tr>
                                             <td class="fw-bold text-success">A</td>
                                             <td>Achievable</td>
-                                            <td class="fw-bold text-danger">С</td>
-                                            <td>Согласована</td>
-                                            <td>Связана с проблемой, результатом; нет нарушений закона, не противоречит
-                                                правилам, не наносит вред.</td>
+                                            <td class="fw-bold text-danger">Д</td>
+                                            <td>Достижима</td>
+                                            <td>Возможно ли достигнуть цель, есть ли все ресурсы для достижения цели или
+                                                их довольно легко можно получить.</td>
                                         </tr>
                                         <tr>
                                             <td class="fw-bold text-success">R</td>
                                             <td>Relevant</td>
-                                            <td class="fw-bold text-danger">К</td>
-                                            <td>Конкретна</td>
-                                            <td>Указано, что именно нужно сделать, где, с кем, с помощью чего и т.д.
-                                            </td>
+                                            <td class="fw-bold text-danger">С</td>
+                                            <td>Согласована</td>
+                                            <td>Связана с проблемой, результатом; нет нарушений закона, не противоречит
+                                                правилам, не наносит вред.</td>
                                         </tr>
                                         <tr>
                                             <td class="fw-bold text-success">T</td>
@@ -674,6 +722,33 @@
                                             <td class="fw-bold text-danger">О</td>
                                             <td>Ограничена по срокам</td>
                                             <td>Указано, когда нужно достигнуть цели.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-responsive">
+                                <table
+                                    class="table table-danger table-bordered border-warning table-striped table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td class="fw-bold text-danger">Д</td>
+                                            <td>Достижима</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-danger">И</td>
+                                            <td>Измерима</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-danger">С</td>
+                                            <td>Согласована</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-danger">К</td>
+                                            <td>Конкретна</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-danger">О</td>
+                                            <td>Ограничена по срокам</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -759,6 +834,14 @@
         crossorigin="anonymous"></script>
 
     <script>
+        function progressBar() {
+            let scroll = document.body.scrollTop || document.documentElement.scrollTop
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+            let scrolled = scroll / height * 100
+            document.getElementById('progressBar').style.width = scrolled + '%'
+        }
+        window.addEventListener('scroll', progressBar)
+
         const btnUp = {
             el: document.querySelector(".btn-up"),
             show() {
@@ -783,8 +866,37 @@
                 }
             }
         }
+        btnUp.addEventListener()
 
-        btnUp.addEventListener();
+        function getTimeRemaining(endtime) {
+            var t = Date.parse(endtime) - Date.parse(new Date())
+            var seconds = Math.floor((t / 1000) % 60)
+            var minutes = Math.floor((t / 1000 / 60) % 60)
+            var hours = Math.floor((t / (1000 * 60 * 60)) % 24)
+            var days = Math.floor(t / (1000 * 60 * 60 * 24))
+            return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
+        }
+        function initializeClock() {
+            var deadline = "April 22 2024 00:00:00";
+            function updateClock() {
+                var t = getTimeRemaining(deadline)
+                document.querySelector(".days").innerHTML = t.days
+                document.querySelector(".hours").innerHTML = ("0" + t.hours).slice(-2)
+                document.querySelector(".minutes").innerHTML = ("0" + t.minutes).slice(-2)
+                document.querySelector(".seconds").innerHTML = ("0" + t.seconds).slice(-2)
+                if (document.querySelector(".days").innerHTML == "0" && document.querySelector(".hours").innerHTML == "00" && document.querySelector(".minutes").innerHTML == "00" && document.querySelector(".seconds").innerHTML == "00") {
+                    document.getElementById("loading").style.display = "none"
+                }
+            }
+            var timeinterval = setInterval(updateClock, 1000);
+        }
+        initializeClock();
 
         let questions = [
             "Что я хочу создать?",
