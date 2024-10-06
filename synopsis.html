@@ -883,7 +883,9 @@
             };
         }
         function initializeClock() {
-            var deadline = "April 22 2024 00:00:00";
+            let date = new Date()
+            let year = date.getFullYear() + 1
+            var deadline = `April 22 ${year} 00:00:00`
             function updateClock() {
                 var t = getTimeRemaining(deadline)
                 document.querySelector(".days").innerHTML = t.days
@@ -891,7 +893,7 @@
                 document.querySelector(".minutes").innerHTML = ("0" + t.minutes).slice(-2)
                 document.querySelector(".seconds").innerHTML = ("0" + t.seconds).slice(-2)
                 if (document.querySelector(".days").innerHTML == "0" && document.querySelector(".hours").innerHTML == "00" && document.querySelector(".minutes").innerHTML == "00" && document.querySelector(".seconds").innerHTML == "00") {
-                    document.getElementById("loading").style.display = "none"
+                    initializeClock()
                 }
             }
             var timeinterval = setInterval(updateClock, 1000);
