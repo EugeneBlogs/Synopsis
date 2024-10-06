@@ -19,6 +19,7 @@
             height: 4px;
             width: 0%;
             background: mediumpurple;
+            z-index: 1000;
         }
 
         .accordion-button:not(.collapsed) {
@@ -48,6 +49,7 @@
             justify-content: center;
             width: 60px;
             height: 50px;
+            z-index: 1000;
         }
 
         .btn-up::before {
@@ -136,7 +138,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#item1">Сентябрь - Октябрь</button>
+                                    data-bs-target="#item1">Сентябрь 2024 - Октябрь 2024</button>
                             </h2>
                             <div id="item1" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                 <div class="accordion-body">Уроки + Онлайн ДЗ = <b><u>ЗАЧЁТ</u></b> + бонусы.</div>
@@ -145,7 +147,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#item2">До 7 Ноября</button>
+                                    data-bs-target="#item2">До 7 Ноября 2024</button>
                             </h2>
                             <div id="item2" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                 <div class="accordion-body">Выбор руководителя, анкета.</div>
@@ -154,7 +156,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#item3">Ноябрь - 10 Декабря</button>
+                                    data-bs-target="#item3">Ноябрь 2024 - 10 Декабря 2024</button>
                             </h2>
                             <div id="item3" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                 <div class="accordion-body">Планирование проекта, заполнение паспорта =
@@ -165,7 +167,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#item4">1 Декабря - Январь</button>
+                                    data-bs-target="#item4">1 Декабря 2024 - Январь 2025</button>
                             </h2>
                             <div id="item4" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                 <div class="accordion-body">Реализация проекта.</div>
@@ -174,7 +176,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#item5">10 Февраля</button>
+                                    data-bs-target="#item5">10 Февраля 2025</button>
                             </h2>
                             <div id="item5" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                 <div class="accordion-body">Предзащита = <b><u>ЗАЧЁТ</u></b>.</div>
@@ -183,32 +185,58 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#item6">Конец Апреля</button>
+                                    data-bs-target="#item6">Конец Апреля 2025</button>
                             </h2>
                             <div id="item6" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                 <div class="accordion-body">Защита = <b><u>ЗАЧЁТ</u></b>.</div>
                             </div>
                         </div>
                     </div>
-                    <div id="loading">
-                        <h5 class="fw-bold fst-italic text-center text-info mt-4" id="item_2">До предзащиты проекта:
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-sm-12">
+                        <h5 class="fw-bold fst-italic text-center text-info mt-4" id="info_timer_1">До предзащиты
+                            проекта:</h5>
+                        <div class="text-center text-light">
+                            <div id="countdown">
+                                <div class="countdown-number">
+                                    <h5 class="days_1 countdown-time"></h5>
+                                    <p class="countdown-text">Дней</p>
+                                </div>
+                                <div class="countdown-number">
+                                    <h5 class="hours_1 countdown-time"></h5>
+                                    <p class="countdown-text">Часов</p>
+                                </div>
+                                <div class="countdown-number">
+                                    <h5 class="minutes_1 countdown-time"></h5>
+                                    <p class="countdown-text">Минут</p>
+                                </div>
+                                <div class="countdown-number">
+                                    <h5 class="seconds_1 countdown-time"></h5>
+                                    <p class="countdown-text">Секунд</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-sm-12">
+                        <h5 class="fw-bold fst-italic text-center text-info mt-4" id="info_timer_2">До защиты проекта:
                         </h5>
                         <div class="text-center text-light">
                             <div id="countdown">
                                 <div class="countdown-number">
-                                    <h5 class="days countdown-time"></h5>
+                                    <h5 class="days_2 countdown-time"></h5>
                                     <p class="countdown-text">Дней</p>
                                 </div>
                                 <div class="countdown-number">
-                                    <h5 class="hours countdown-time"></h5>
+                                    <h5 class="hours_2 countdown-time"></h5>
                                     <p class="countdown-text">Часов</p>
                                 </div>
                                 <div class="countdown-number">
-                                    <h5 class="minutes countdown-time"></h5>
+                                    <h5 class="minutes_2 countdown-time"></h5>
                                     <p class="countdown-text">Минут</p>
                                 </div>
                                 <div class="countdown-number">
-                                    <h5 class="seconds countdown-time"></h5>
+                                    <h5 class="seconds_2 countdown-time"></h5>
                                     <p class="countdown-text">Секунд</p>
                                 </div>
                             </div>
@@ -883,20 +911,65 @@
             };
         }
         function initializeClock() {
-            let date = new Date()
-            let year = date.getFullYear() + 1
-            var deadline = `April 22 ${year} 00:00:00`
+            var deadline_1 = "February 10 2025 08:00:00"
+            var deadline_2 = "April 22 2025 18:45:00"
             function updateClock() {
-                var t = getTimeRemaining(deadline)
-                document.querySelector(".days").innerHTML = t.days
-                document.querySelector(".hours").innerHTML = ("0" + t.hours).slice(-2)
-                document.querySelector(".minutes").innerHTML = ("0" + t.minutes).slice(-2)
-                document.querySelector(".seconds").innerHTML = ("0" + t.seconds).slice(-2)
-                if (document.querySelector(".days").innerHTML == "0" && document.querySelector(".hours").innerHTML == "00" && document.querySelector(".minutes").innerHTML == "00" && document.querySelector(".seconds").innerHTML == "00") {
-                    initializeClock()
+                var t1 = getTimeRemaining(deadline_1)
+                var t2 = getTimeRemaining(deadline_2)
+                let days_1 = t1.days
+                if (Number(days_1) < 10) {
+                    days_1 = `0${days_1}`
+                }
+                document.querySelector(".days_1").innerHTML = days_1
+                document.querySelector(".hours_1").innerHTML = ("0" + t1.hours).slice(-2)
+                document.querySelector(".minutes_1").innerHTML = ("0" + t1.minutes).slice(-2)
+                document.querySelector(".seconds_1").innerHTML = ("0" + t1.seconds).slice(-2)
+                if (Number(t1.days) >= 0 && Number(t1.days) <= 7) {
+                    document.getElementById("info_timer_1").innerHTML = "Скоро предзащита проекта!"
+                    document.getElementById("info_timer_1").classList.remove("text-info")
+                    document.getElementById("info_timer_1").classList.remove("text-danger")
+                    document.getElementById("info_timer_1").classList.remove("text-success")
+                    document.getElementById("info_timer_1").classList.add("text-danger")
+                }
+                else if (Number(t1.days) < 0) {
+                    document.querySelector(".days_1").innerHTML = "00"
+                    document.querySelector(".hours_1").innerHTML = "00"
+                    document.querySelector(".minutes_1").innerHTML = "00"
+                    document.querySelector(".seconds_1").innerHTML = "00"
+                    document.getElementById("info_timer_1").innerHTML = "Предзащита проекта прошла."
+                    document.getElementById("info_timer_1").classList.remove("text-info")
+                    document.getElementById("info_timer_1").classList.remove("text-danger")
+                    document.getElementById("info_timer_1").classList.remove("text-success")
+                    document.getElementById("info_timer_1").classList.add("text-success")
+                }
+                let days_2 = t2.days
+                if (Number(days_2) < 10) {
+                    days_2 = `0${days_2}`
+                }
+                document.querySelector(".days_2").innerHTML = days_2
+                document.querySelector(".hours_2").innerHTML = ("0" + t2.hours).slice(-2)
+                document.querySelector(".minutes_2").innerHTML = ("0" + t2.minutes).slice(-2)
+                document.querySelector(".seconds_2").innerHTML = ("0" + t2.seconds).slice(-2)
+                if (Number(t2.days) >= 0 && Number(t2.days) <= 7) {
+                    document.getElementById("info_timer_2").innerHTML = "Скоро защита проекта!"
+                    document.getElementById("info_timer_2").classList.remove("text-info")
+                    document.getElementById("info_timer_2").classList.remove("text-danger")
+                    document.getElementById("info_timer_2").classList.remove("text-success")
+                    document.getElementById("info_timer_2").classList.add("text-danger")
+                }
+                else if (Number(t2.days) < 0) {
+                    document.querySelector(".days_2").innerHTML = "00"
+                    document.querySelector(".hours_2").innerHTML = "00"
+                    document.querySelector(".minutes_2").innerHTML = "00"
+                    document.querySelector(".seconds_2").innerHTML = "00"
+                    document.getElementById("info_timer_2").innerHTML = "Защита проекта прошла."
+                    document.getElementById("info_timer_2").classList.remove("text-info")
+                    document.getElementById("info_timer_2").classList.remove("text-danger")
+                    document.getElementById("info_timer_2").classList.remove("text-success")
+                    document.getElementById("info_timer_2").classList.add("text-success")
                 }
             }
-            var timeinterval = setInterval(updateClock, 1000);
+            var timeinterval = setInterval(updateClock, 1000)
         }
         initializeClock();
 
