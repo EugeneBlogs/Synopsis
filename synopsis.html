@@ -115,13 +115,13 @@
     <div class="container-fluid pt-5 pb-5" id="background_animation">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 text-center">
                     <div class="mt-5">
-                        <h1 class="fw-bold text-center text-light"><span class="text-danger">ПРОЕКТ</span>ирование "От и
-                            До"</h1>
+                        <h1 class="fw-bold text-light"><span class="text-danger">ПРОЕКТ</span>ирование <span
+                                id="secret_text">"От и До"</span></h1>
                         <h5 class="fst-italic text-center text-primary text-decoration-underline">10 класс</h5>
                         <h6 class="text-center text-info text-decoration-underline mt-3">Навигация:</h6>
-                        <nav style="--bs-breadcrumb-divider: '=>';">
+                        <nav style="--bs-breadcrumb-divider: '=>'">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#item_1">План работы</a></li>
                                 <li class="breadcrumb-item"><a href="#item_2">Лекция 1. Что такое проект?</a></li>
@@ -140,6 +140,16 @@
     </div>
     <div class="container">
         <div class="row">
+            <div style="display: none;" class="text-center" id="secret_block">
+                <h4 class="text-danger mt-3">Синквейн:</h4>
+                <p>
+                    Проект.<br>
+                    Уникальный. Полезный.<br>
+                    Изучить. Спланировать. Воплотить.<br>
+                    Я стремлюсь его реализовать.<br>
+                    Деятельность.
+                </p>
+            </div>
             <div class="mt-5">
                 <h3 class="fw-bold text-center text-success text-decoration-underline" id="item_1">План работы</h3>
                 <div class="accordion mt-3" id="accordion">
@@ -1084,11 +1094,20 @@
             points: 15.00
         })
 
+        let names = [
+            '"От ИДЕИ и До РЕАЛИЗАЦИИ"',
+            '"От НУЛЯ и До РЕЗУЛЬТАТА"',
+            '"От ПРОБЛЕМЫ и До ПРОДУКТА"',
+        ]
         function progressBar() {
             let scroll = document.body.scrollTop || document.documentElement.scrollTop
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight
             let scrolled = scroll / height * 100
             document.getElementById('progressBar').style.width = scrolled + '%'
+            if (scrolled == 100) {
+                document.getElementById("secret_block").style.display = "block"
+                document.getElementById("secret_text").innerHTML = names[Math.floor(Math.random() * names.length)]
+            }
         }
         window.addEventListener('scroll', progressBar)
 
